@@ -11,7 +11,7 @@
 @import "general/z-index";
 
 :root {
-	@each $name, $color in $-colors {
+	@each $name, $color in $finance-colors {
 		--#{$name}: #{$color};
 	}
 	// @each $name, $color in $-colors {
@@ -23,16 +23,16 @@
 // Layout ( eg. Header, Main, Footer )
 // ==========================================================================
 
-@import "layout/";
+@import "layout/header";
 
 // ==========================================================================
 // Component ( eg. Buttons, Texts )
 // ==========================================================================
 
-@import "component/";
+// @import "component/";
 
 // ==========================================================================
 // Theme ( eg. Dark )
 // ==========================================================================
 
-@import "theme/";
+// @import "theme/";
