@@ -5,7 +5,7 @@
 * Light Green - #49AA26
 * Green - #2D4A22
 * Dark Blue - #363F5F
-* Light Blue - #969CB2
+* Light Blue - #ccc
 * Gray - #E5E5E5
 
 ***

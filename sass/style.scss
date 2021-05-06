@@ -7,7 +7,7 @@
 @import "general/general-config";
 @import "general/variables";
 @import "general/functions";
-@import "general/reset";
+// @import "general/reset";
 @import "general/z-index";
 
 :root {
@@ -24,12 +24,14 @@
 // ==========================================================================
 
 @import "layout/header";
+@import "layout/main";
+@import "layout/transfer-list";
 
 // ==========================================================================
 // Component ( eg. Buttons, Texts )
 // ==========================================================================
 
-// @import "component/";
+@import "component/card";
 
 // ==========================================================================
 // Theme ( eg. Dark )

@@ -1,0 +1,35 @@
+main {
+    background-color: var(--finance-gray);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: calc(100% - 338px);
+    padding-top: 100px;
+    flex-direction: column;
+
+    ul {
+        padding: 0;
+    }
+
+    .list-indicator {
+        list-style: none;
+        display: flex;
+        width: 1120px;
+        margin-left: 60px;
+        color: var(--finance-blue);
+        
+        li {
+            font-size: 16px;
+        }
+
+        li:nth-child(1) {
+            width: 50%;
+        }
+        li:nth-child(2) {
+            width: 35%;
+        }
+        li:nth-child(3) {
+            width: 10%;
+        }
+    }
+}
