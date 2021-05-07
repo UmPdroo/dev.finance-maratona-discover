@@ -1,0 +1,93 @@
+.modal-overlay {
+	background-color: #00000071;
+	height: 100vh;
+	position: fixed;
+	width: 100vw;
+	z-index: 30;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	visibility: hidden;
+
+	&.on {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.modal {
+		background-color: #f0f2f5;
+		padding: 30px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		// height: 343px;
+		// width: 568px;
+
+		* {
+			color: var(--finance-darkblue);
+		}
+
+		h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+		}
+
+		form {
+			.input-group {
+				margin: 5px 0;
+
+				&.actions {
+					display: flex;
+					align-items: center;
+                    justify-content: space-between;
+                    margin-top: 10px;
+				}
+
+				.help {
+					font-size: 1.2rem;
+					opacity: 0.6;
+					margin: 5px 0;
+				}
+			}
+			input {
+				outline: none;
+				font-weight: 500;
+				font-size: 1.4rem;
+				display: flex;
+				flex-direction: column;
+				padding: 5px 12px;
+				width: 450px;
+				height: 32px;
+				border: none;
+                border-radius: 5px;
+                
+                &#amount {
+                    margin-bottom: 5px;
+                }
+			}
+
+            .btn, button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 45px;
+                width: 48%;
+                font-size: 1.4rem;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            button {
+                font-weight: 500;
+                border: none;
+                color: #fff;
+                background-color: var(--finance-green);
+            }
+			.btn.cancel {
+                color: var(--finance-red);
+                border: 1px solid var(--finance-red);
+                text-decoration: none;
+			}
+		}
+	}
+}

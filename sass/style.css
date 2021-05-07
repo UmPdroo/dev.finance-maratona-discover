@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 html {
   font-size: 62.5%;
+  background-color: var(--finance-gray);
+  height: 100%;
 }
 
 html, body {
@@ -10,11 +12,25 @@ html, body {
 }
 
 body {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
 }
 
 * {
   font-family: "Raleway", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
 }
 
 :root {
@@ -37,9 +53,6 @@ header {
 header img[alt=Logo] {
   margin: 25px 0 70px 0;
 }
-header .cards {
-  display: flex;
-}
 
 main {
   background-color: var(--finance-gray);
@@ -47,8 +60,38 @@ main {
   align-items: center;
   justify-content: flex-start;
   height: calc(100% - 338px);
-  padding-top: 100px;
   flex-direction: column;
+  width: 1120px;
+  align-self: center;
+}
+@media (min-width: 900px) and (max-width: 1146px) {
+  main {
+    width: 90vw;
+  }
+}
+main .cards {
+  margin-top: -130px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 50px;
+}
+@media (max-width: 1206px) {
+  main .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+main .btn {
+  font-size: 1.6rem;
+  color: #367e1b;
+  text-decoration: none;
+  font-weight: 500;
+  align-self: flex-start;
+  padding-bottom: 10px;
+  margin-left: 30px;
+}
+main .btn:hover {
+  color: var(--finance-green);
 }
 main ul {
   padding: 0;
@@ -73,36 +116,137 @@ main .list-indicator li:nth-child(3) {
   width: 10%;
 }
 
-.transfer-list {
-  display: flex;
+table.transactions-list {
+  display: block;
+  width: 1120px;
+  border-spacing: 0 5px;
+  overflow-x: auto;
 }
-.transfer-list .list-item {
+table.transactions-list tr {
+  border-radius: 5px;
+}
+table.transactions-list th, table.transactions-list td {
+  background-color: #fff;
+  padding: 15px 25px;
+  font-size: 1.6rem;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--finance-darkblue);
+  text-align: left;
+}
+table.transactions-list th:nth-child(1), table.transactions-list td:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+}
+table.transactions-list th:last-child, table.transactions-list td:last-child {
+  border-radius: 0 5px 5px 0;
+}
+table.transactions-list th {
+  background-color: #fff;
+  font-size: 1.3rem;
+  line-height: 18px;
+}
+table.transactions-list tbody tr {
+  opacity: 0.6;
+}
+table.transactions-list tbody tr:hover {
+  opacity: 1;
+}
+table.transactions-list td.desc {
+  width: 50%;
+  font-weight: 500;
+}
+table.transactions-list td.income {
+  color: var(--finance-green);
+  width: 35%;
+}
+table.transactions-list td.expense {
+  color: var(--finance-red);
+  width: 35%;
+}
+table.transactions-list td.date {
+  width: 10%;
+  color: var(--finance-blue);
+}
+
+.modal-overlay {
+  background-color: #00000071;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-overlay.on {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-overlay .modal {
+  background-color: #f0f2f5;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-overlay .modal * {
+  color: var(--finance-darkblue);
+}
+.modal-overlay .modal h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+.modal-overlay .modal form .input-group {
+  margin: 5px 0;
+}
+.modal-overlay .modal form .input-group.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.modal-overlay .modal form .input-group .help {
+  font-size: 1.2rem;
+  opacity: 0.6;
+  margin: 5px 0;
+}
+.modal-overlay .modal form input {
+  outline: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 12px;
+  width: 450px;
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+}
+.modal-overlay .modal form input#amount {
+  margin-bottom: 5px;
+}
+.modal-overlay .modal form .btn, .modal-overlay .modal form button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 64px;
-  width: 1120px;
-  background-color: #fff;
-  border-radius: 5px;
+  height: 45px;
+  width: 48%;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  cursor: pointer;
 }
-.transfer-list .list-item h1 {
-  font-size: 16px;
-  line-height: 24px;
-}
-.transfer-list .list-item #transf-name {
-  width: 50%;
-  color: var(--finance-darkblue);
+.modal-overlay .modal form button {
   font-weight: 500;
+  border: none;
+  color: #fff;
+  background-color: var(--finance-green);
 }
-.transfer-list .list-item #transf-value {
-  width: 35%;
-  color: var(--finance-green);
-  font-weight: 400;
-}
-.transfer-list .list-item #transf-date {
-  width: 10%;
-  color: var(--finance-blue);
-  font-weight: 400;
+.modal-overlay .modal form .btn.cancel {
+  color: var(--finance-red);
+  border: 1px solid var(--finance-red);
+  text-decoration: none;
 }
 
 .card {
@@ -112,6 +256,12 @@ main .list-indicator li:nth-child(3) {
   border-radius: 5px;
   padding: 25px;
   margin: 10px;
+  z-index: 20;
+}
+@media (max-width: 1206px) {
+  .card {
+    width: 70vw;
+  }
 }
 .card section {
   display: flex;

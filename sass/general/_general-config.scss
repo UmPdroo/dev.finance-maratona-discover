@@ -2,6 +2,8 @@
 
 html {
     font-size: 62.5%;
+    background-color: var(--finance-gray);
+    height: 100%;
 }
 html, body {
     margin: 0;
@@ -9,9 +11,23 @@ html, body {
     box-sizing: border-box;
 }
 body {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
 }
 
 * {
     font-family: "Raleway", sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: -1px;
 }

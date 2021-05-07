@@ -1,0 +1,58 @@
+table.transactions-list {
+    display: block;
+    width: 1120px;
+    border-spacing: 0 5px;
+    overflow-x: auto;
+
+    tr {
+        border-radius: 5px;
+    }
+    th, td {
+        background-color: #fff;
+        padding: 15px 25px;
+        font-size: 1.6rem;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--finance-darkblue);
+        text-align: left;
+
+        &:nth-child(1) {
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+    }
+    th {
+        background-color: #fff;
+        font-size: 1.3rem;
+        line-height: 18px;
+    }
+    
+    tbody tr {
+        opacity: 0.6;
+
+        &:hover{
+            opacity: 1;
+        }
+    }    
+    td {
+
+        &.desc {
+            width: 50%;
+            font-weight: 500;
+        }
+        &.income {
+            color: var(--finance-green);
+            width: 35%;
+        }
+        &.expense {
+            color: var(--finance-red);
+            width: 35%;
+        }
+        &.date {
+            width: 10%;
+            color: var(--finance-blue);
+        }
+    }
+}

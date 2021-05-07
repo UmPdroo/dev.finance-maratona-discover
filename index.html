@@ -5,14 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Titulo do Documento</title>
+		<title>Dev.Finance$</title>
 
-		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<link rel="shortcut icon" href="./src/favicon.svg" type="image/x-icon" />
 		<link rel="stylesheet" href="./sass/style.css" />
 	</head>
 	<body>
         <header>
 			<img src="./src/logo.svg" alt="Logo">
+		</header>
+		<main>
+			<h2 class="sr-only">Balanço</h2>
 			<div class="cards">
 				<div class="card">
 					<section>
@@ -36,21 +39,50 @@
 					<h1>R$ 17.000,00</h1>
 				</div>
 			</div>
-		</header>
-		<main>
-			<ul class="list-indicator">
-				<li>Descrição</li>
-				<li>Valor</li>
-				<li>Data</li>
-			</ul>
-			<ul class="transfer-list">
-				<li class="list-item">
-					<h1 id="transf-name">Nome Da Transferencia</h1>
-					<h1 id="transf-value">R$ 12.000,00</h1>
-					<h1 id="transf-date">13/04/2020</h1>
-				</li>
-			</ul>
+			<h2 class="sr-only">Transações</h2>
+			<a href="#" class="btn new" onclick="Modal.toggleOpen()">+ Nova Transação</a>
+
+			<table class="transactions-list">
+				<thead>
+					<tr>
+						<th>Descrição</th>
+						<th>Valor</th>
+						<th>Data</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
 		</main>
+
+		<div class="modal-overlay">
+			<div class="modal">
+				<h2>Nova Transação</h2>
+				<form action="">
+					<div class="input-group">
+						<label for="desc" class="sr-only">Descrição</label>
+						<input type="text" id="desc" placeholder="Descrição">
+					</div>
+					<div class="input-group">
+						<label for="amount" class="sr-only">Valor</label>
+						<input type="number" id="amount" placeholder="0,00" step="0.01">
+						<small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+					</div>
+
+					<div class="input-group">
+						<label for="date" class="sr-only">Data</label>
+						<input type="date" id="date">
+					</div>
+
+					<div class="input-group actions">
+						<a href="#" class="btn cancel" onclick="Modal.toggleOpen()">Cancelar</a>
+						<button>Salvar</button>
+					</div>
+				</form>
+			</div>
+		</div>
     </body>
 
 	<!-- Script -->

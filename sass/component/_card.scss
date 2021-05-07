@@ -5,6 +5,11 @@
 	border-radius: 5px;
 	padding: 25px;
 	margin: 10px;
+	z-index: 20;
+	
+	@media (max-width: 1206px) {
+		width: 70vw;
+	}
 
 	section {
 		display: flex;
