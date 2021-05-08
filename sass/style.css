@@ -93,28 +93,6 @@ main .btn {
 main .btn:hover {
   color: var(--finance-green);
 }
-main ul {
-  padding: 0;
-}
-main .list-indicator {
-  list-style: none;
-  display: flex;
-  width: 1120px;
-  margin-left: 60px;
-  color: var(--finance-blue);
-}
-main .list-indicator li {
-  font-size: 16px;
-}
-main .list-indicator li:nth-child(1) {
-  width: 50%;
-}
-main .list-indicator li:nth-child(2) {
-  width: 35%;
-}
-main .list-indicator li:nth-child(3) {
-  width: 10%;
-}
 
 table.transactions-list {
   display: block;
@@ -122,12 +100,15 @@ table.transactions-list {
   border-spacing: 0 5px;
   overflow-x: auto;
 }
+table.transactions-list thead {
+  width: 1120px;
+}
 table.transactions-list tr {
   border-radius: 5px;
 }
 table.transactions-list th, table.transactions-list td {
-  background-color: #fff;
   padding: 15px 25px;
+  background-color: #fff;
   font-size: 1.6rem;
   line-height: 24px;
   font-weight: 400;
@@ -166,6 +147,18 @@ table.transactions-list td.expense {
 table.transactions-list td.date {
   width: 10%;
   color: var(--finance-blue);
+}
+table.transactions-list td.remove {
+  padding: 0 25px;
+  display: grid;
+  place-content: center;
+  height: 54px;
+}
+table.transactions-list td.remove img {
+  opacity: 0.6;
+}
+table.transactions-list td.remove img:hover {
+  opacity: 1;
 }
 
 .modal-overlay {
@@ -217,7 +210,6 @@ table.transactions-list td.date {
   font-weight: 500;
   font-size: 1.4rem;
   display: flex;
-  flex-direction: column;
   padding: 5px 12px;
   width: 450px;
   height: 32px;

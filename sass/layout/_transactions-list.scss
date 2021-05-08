@@ -4,12 +4,16 @@ table.transactions-list {
     border-spacing: 0 5px;
     overflow-x: auto;
 
+    thead {
+        width: 1120px;
+    }
+
     tr {
         border-radius: 5px;
     }
     th, td {
-        background-color: #fff;
         padding: 15px 25px;
+        background-color: #fff;
         font-size: 1.6rem;
         line-height: 24px;
         font-weight: 400;
@@ -36,7 +40,7 @@ table.transactions-list {
             opacity: 1;
         }
     }    
-    td {
+    td{
 
         &.desc {
             width: 50%;
@@ -52,7 +56,21 @@ table.transactions-list {
         }
         &.date {
             width: 10%;
-            color: var(--finance-blue);
+			color: var(--finance-blue);
         }
+        &.remove {
+            padding: 0 25px;
+            display: grid;
+            place-content: center;
+            height: 54px;
+
+            img {
+			    opacity: 0.6;
+			
+                &:hover {
+                    opacity: 1;
+                }
+            }
+		}
     }
 }

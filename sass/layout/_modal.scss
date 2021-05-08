@@ -21,8 +21,6 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		// height: 343px;
-		// width: 568px;
 
 		* {
 			color: var(--finance-darkblue);
@@ -55,7 +53,7 @@
 				font-weight: 500;
 				font-size: 1.4rem;
 				display: flex;
-				flex-direction: column;
+				// flex-direction: column;
 				padding: 5px 12px;
 				width: 450px;
 				height: 32px;

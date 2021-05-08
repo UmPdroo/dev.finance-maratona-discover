@@ -20,23 +20,23 @@
 				<div class="card">
 					<section>
 						<h2>Entradas</h2>
-						<img src="./src/Entradas.svg" alt="">
+						<img src="./src/income.svg" alt="">
 					</section>
-					<h1>R$ 17.000,00</h1>
+					<h1 id="income-display">R$ 17.000,00</h1>
 				</div>
 				<div class="card">
 					<section>
 						<h2>Saidas</h2>
-						<img src="./src/Saídas.svg" alt="">
+						<img src="./src/expense.svg" alt="">
 					</section>
-					<h1>R$ 17.000,00</h1>
+					<h1 id="expense-display">R$ 17.000,00</h1>
 				</div>
 				<div class="card">
 					<section>
 						<h2>Total</h2>
-						<img src="./src/Total.svg" alt="">
+						<img src="./src/total.svg" alt="">
 					</section>
-					<h1>R$ 17.000,00</h1>
+					<h1 id="total-display">R$ 17.000,00</h1>
 				</div>
 			</div>
 			<h2 class="sr-only">Transações</h2>
@@ -45,9 +45,9 @@
 			<table class="transactions-list">
 				<thead>
 					<tr>
-						<th>Descrição</th>
-						<th>Valor</th>
-						<th>Data</th>
+						<th class="desc">Descrição</th>
+						<th class="amount">Valor</th>
+						<th class="date">Data</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -60,7 +60,7 @@
 		<div class="modal-overlay">
 			<div class="modal">
 				<h2>Nova Transação</h2>
-				<form action="">
+				<form action="" onsubmit="Form.submit(event)">
 					<div class="input-group">
 						<label for="desc" class="sr-only">Descrição</label>
 						<input type="text" id="desc" placeholder="Descrição">
@@ -78,7 +78,7 @@
 
 					<div class="input-group actions">
 						<a href="#" class="btn cancel" onclick="Modal.toggleOpen()">Cancelar</a>
-						<button>Salvar</button>
+						<button type="submit">Salvar</button>
 					</div>
 				</form>
 			</div>
