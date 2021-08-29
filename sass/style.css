@@ -106,7 +106,8 @@ table.transactions-list thead {
 table.transactions-list tr {
   border-radius: 5px;
 }
-table.transactions-list th, table.transactions-list td {
+table.transactions-list th,
+table.transactions-list td {
   padding: 15px 25px;
   background-color: #fff;
   font-size: 1.6rem;
@@ -115,10 +116,12 @@ table.transactions-list th, table.transactions-list td {
   color: var(--finance-darkblue);
   text-align: left;
 }
-table.transactions-list th:nth-child(1), table.transactions-list td:nth-child(1) {
+table.transactions-list th:nth-child(1),
+table.transactions-list td:nth-child(1) {
   border-radius: 5px 0 0 5px;
 }
-table.transactions-list th:last-child, table.transactions-list td:last-child {
+table.transactions-list th:last-child,
+table.transactions-list td:last-child {
   border-radius: 0 5px 5px 0;
 }
 table.transactions-list th {
@@ -130,7 +133,7 @@ table.transactions-list tbody tr {
   opacity: 0.6;
 }
 table.transactions-list tbody tr:hover {
-  opacity: 1;
+  opacity: 1 !important;
 }
 table.transactions-list td.desc {
   width: 50%;

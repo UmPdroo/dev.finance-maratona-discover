@@ -5,15 +5,19 @@ const Modal = {
 	},
 };
 
-
 const Storage = {
 	get() {
-		return JSON.parse(localStorage.getItem("dev.finance:transactions")) || []
+		return (
+			JSON.parse(localStorage.getItem("dev.finance:transactions")) || []
+		);
 	},
 	set(transactions) {
-		localStorage.setItem("dev.finance:transactions", JSON.stringify(transactions))
-	}
-}
+		localStorage.setItem(
+			"dev.finance:transactions",
+			JSON.stringify(transactions)
+		);
+	},
+};
 
 const Transaction = {
 	all: Storage.get(),
@@ -178,13 +182,44 @@ const App = {
 
 		DOM.updateBalence();
 
-		Storage.set(Transaction.all)
+		Storage.set(Transaction.all);
+
+		document.addEventListener("DOMContentLoaded", App.animations);
 	},
 	reload() {
 		DOM.clearTransactions();
 		App.init();
 	},
-};
+	animations() {
+		const tl = gsap.timeline();
 
+		tl.from(".card", {
+			duration: 0.8,
+			opacity: 0,
+			y: -50,
+			stagger: { each: 0.2 },
+		})
+			.from(
+				".display",
+				{
+					duration: 0.4,
+					opacity: 0,
+					x: -10,
+					stagger: { each: 0.2 },
+				},
+				"-=0.6"
+			)
+			.from(
+				".transactions-list tbody tr",
+				{
+					duration: 0.4,
+					opacity: 0,
+					x: -20,
+					stagger: { each: 0.2 },
+				},
+				"-=0.6"
+			);
+	},
+};
 
 App.init();

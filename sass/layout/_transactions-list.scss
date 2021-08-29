@@ -1,76 +1,76 @@
 table.transactions-list {
-    display: block;
-    width: 1120px;
-    border-spacing: 0 5px;
-    overflow-x: auto;
+	display: block;
+	width: 1120px;
+	border-spacing: 0 5px;
+	overflow-x: auto;
 
-    thead {
-        width: 1120px;
-    }
+	thead {
+		width: 1120px;
+	}
 
-    tr {
-        border-radius: 5px;
-    }
-    th, td {
-        padding: 15px 25px;
-        background-color: #fff;
-        font-size: 1.6rem;
-        line-height: 24px;
-        font-weight: 400;
-        color: var(--finance-darkblue);
-        text-align: left;
+	tr {
+		border-radius: 5px;
+	}
+	th,
+	td {
+		padding: 15px 25px;
+		background-color: #fff;
+		font-size: 1.6rem;
+		line-height: 24px;
+		font-weight: 400;
+		color: var(--finance-darkblue);
+		text-align: left;
 
-        &:nth-child(1) {
-            border-radius: 5px 0 0 5px;
-        }
-        &:last-child {
-            border-radius: 0 5px 5px 0;
-        }
-    }
-    th {
-        background-color: #fff;
-        font-size: 1.3rem;
-        line-height: 18px;
-    }
-    
-    tbody tr {
-        opacity: 0.6;
-
-        &:hover{
-            opacity: 1;
-        }
-    }    
-    td{
-
-        &.desc {
-            width: 50%;
-            font-weight: 500;
-        }
-        &.income {
-            color: var(--finance-green);
-            width: 35%;
-        }
-        &.expense {
-            color: var(--finance-red);
-            width: 35%;
-        }
-        &.date {
-            width: 10%;
-			color: var(--finance-blue);
-        }
-        &.remove {
-            padding: 0 25px;
-            display: grid;
-            place-content: center;
-            height: 54px;
-
-            img {
-			    opacity: 0.6;
-			
-                &:hover {
-                    opacity: 1;
-                }
-            }
+		&:nth-child(1) {
+			border-radius: 5px 0 0 5px;
 		}
-    }
+		&:last-child {
+			border-radius: 0 5px 5px 0;
+		}
+	}
+	th {
+		background-color: #fff;
+		font-size: 1.3rem;
+		line-height: 18px;
+	}
+
+	tbody tr {
+		opacity: 0.6;
+
+		&:hover {
+			opacity: 1 !important;
+		}
+	}
+	td {
+		&.desc {
+			width: 50%;
+			font-weight: 500;
+		}
+		&.income {
+			color: var(--finance-green);
+			width: 35%;
+		}
+		&.expense {
+			color: var(--finance-red);
+			width: 35%;
+		}
+		&.date {
+			width: 10%;
+			color: var(--finance-blue);
+		}
+		&.remove {
+			padding: 0 25px;
+			display: grid;
+			place-content: center;
+			height: 54px;
+
+			img {
+				opacity: 0.6;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
